@@ -31,6 +31,12 @@ class Event
     end.uniq
   end
 
+  def sorted_item_list
+    items_list.map do |item|
+      item.name
+    end.sort
+  end
+
   def item_quantity(item)
     total = 0
     food_trucks_that_sell(item).each do |truck|
