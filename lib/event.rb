@@ -52,4 +52,8 @@ class Event
     end
     inventory
   end
+
+  def overstocked?(item)
+    food_trucks_that_sell(item).count > 1 && item_quantity(item) > 50
+  end
 end
