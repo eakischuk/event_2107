@@ -49,7 +49,28 @@ RSpec.describe Event do
     expect(@event.food_trucks_that_sell(@item4)).to eq([@food_truck2])
   end
 
-  it 'has total inventory' do
+  it 'has items list' do
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
+    expect(@event.items_list).to eq([@item1, @item2, @item4, @item3])
+  end
+
+  it 'has quantity for given item' do
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
+    expect(@event.item_quantity(@item1)).to eq(100)
+  end
+
+  xit 'has sorted items list' do
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
+    expect(@event.sorted_item_list).to eq(["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"])
+  end
+
+  xit 'has total inventory' do
     @event.add_food_truck(@food_truck1)
     @event.add_food_truck(@food_truck2)
     @event.add_food_truck(@food_truck3)
