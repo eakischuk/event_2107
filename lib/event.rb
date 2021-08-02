@@ -32,6 +32,11 @@ class Event
   end
 
   def item_quantity(item)
+    total = 0
+    food_trucks_that_sell(item).each do |truck|
+      total += truck.inventory[item]
+    end
+    total
   end
 
   def total_inventory
