@@ -1,6 +1,7 @@
 require './lib/item'
 require './lib/food_truck'
 require './lib/event'
+require 'date'
 require 'pry'
 
 RSpec.describe Event do
@@ -98,5 +99,10 @@ RSpec.describe Event do
     expect(@event.overstocked?(@item2)).to eq(false)
     expect(@event.overstocked?(@item1)).to eq(true)
     expect(@event.overstocked_items).to eq([@item1])
+  end
+
+  it 'has date' do
+    allow(Date).to receive(:today).and_return("24/02/2020")
+    expect(@event.date).to eq("24/02/2020")
   end
 end

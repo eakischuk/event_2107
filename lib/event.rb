@@ -1,6 +1,10 @@
+
+require 'date'
+
 class Event
-  attr_reader :name, :food_trucks
+  attr_reader :name, :food_trucks, :date
   def initialize(name)
+    @date = Date.today
     @name = name
     @food_trucks = []
   end
