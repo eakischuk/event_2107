@@ -41,5 +41,9 @@ class Event
 
   def total_inventory
     inventory = {}
+    items_list.each do |item|
+      inventory[item] = {quantity: item_quantity(item), food_trucks: food_trucks_that_sell(item)}
+    end
+    inventory
   end
 end
