@@ -56,4 +56,14 @@ class Event
   def overstocked?(item)
     food_trucks_that_sell(item).count > 1 && item_quantity(item) > 50
   end
+
+  def overstocked_items
+    overstocked = []
+    items_list.each do |item|
+      if overstocked?(item)
+        overstocked << item
+      end
+    end
+    overstocked
+  end
 end
