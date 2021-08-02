@@ -24,4 +24,17 @@ class Event
     end
     sells
   end
+
+  def items_list
+    @food_trucks.flat_map do |truck|
+      truck.items
+    end.uniq
+  end
+
+  def item_quantity(item)
+  end
+
+  def total_inventory
+    inventory = {}
+  end
 end
