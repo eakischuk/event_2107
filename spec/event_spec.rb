@@ -63,7 +63,7 @@ RSpec.describe Event do
     expect(@event.item_quantity(@item1)).to eq(100)
   end
 
-  xit 'has sorted items list' do
+  it 'has sorted items list' do
     @event.add_food_truck(@food_truck1)
     @event.add_food_truck(@food_truck2)
     @event.add_food_truck(@food_truck3)
