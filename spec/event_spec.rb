@@ -70,7 +70,7 @@ RSpec.describe Event do
     expect(@event.sorted_item_list).to eq(["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"])
   end
 
-  xit 'has total inventory' do
+  it 'has total inventory' do
     @event.add_food_truck(@food_truck1)
     @event.add_food_truck(@food_truck2)
     @event.add_food_truck(@food_truck3)
