@@ -20,4 +20,8 @@ class FoodTruck
       @inventory[item] = quantity
     end
   end
+
+  def items
+    @inventory.keys
+  end
 end

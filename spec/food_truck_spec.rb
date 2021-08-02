@@ -26,4 +26,10 @@ RSpec.describe FoodTruck do
     @food_truck.stock(@item2, 12)
     expect(@food_truck.inventory).to eq({@item1 => 55, @item2 => 12})
   end
+
+  it 'lists items' do
+    @food_truck.stock(@item1, 30)
+    @food_truck.stock(@item2, 12)
+    expect(@food_truck.items).to eq([@item1, @item2])
+  end
 end
